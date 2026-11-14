@@ -1,0 +1,116 @@
+/* Tile Bronze - gaya halaman katalog */
+/* Font dimuat lewat <link> di index.html */
+
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#f6f1e9; --card:#ffffff; --line:#e3d8c4; --accent:#a8742a; --accent2:#8a5a1e;
+  --muted:#6d6252; --muted2:#9a8d78; --px:clamp(20px,6vw,80px);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:#2c2619;}
+.hero{position:relative;padding:clamp(48px,7vw,70px) var(--px) clamp(60px,8vw,90px);background:radial-gradient(ellipse at 20% 0%, #f2e3c8 0%, #f6f1e9 65%);border-bottom:1px solid #e3d8c4;overflow:hidden;}
+.hero .glow{position:absolute;right:-120px;top:-120px;width:min(520px,70vw);height:min(520px,70vw);border-radius:50%;background:radial-gradient(circle,rgba(200,150,60,.22),transparent 65%);pointer-events:none;}
+.logo{display:flex;align-items:center;gap:14px;}
+.logo-mark{width:44px;height:44px;flex:0 0 44px;border-radius:10px;background:linear-gradient(135deg,#e0a84f,#8a5a1e);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed';font-weight:700;font-size:22px;color:#fff8ec;box-shadow:0 4px 12px rgba(140,95,30,.25);}
+.logo b{font-size:20px;letter-spacing:3px;color:#3a2c14;} .logo span{color:#a8742a;letter-spacing:3px;font-size:11px;display:block;}
+.hero h1{font-family:'Barlow Condensed';font-size:clamp(40px,7vw,76px);line-height:.95;margin:clamp(28px,4vw,46px) 0 18px;font-weight:700;text-transform:uppercase;color:#3a2c14;}
+.hero h1 em{font-style:normal;color:var(--accent);}
+.hero p{max-width:640px;color:var(--muted);font-size:clamp(13px,1.3vw,15px);line-height:1.7;}
+.badges{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
+.badge{border:1px solid #d9c49a;background:rgba(200,150,60,.10);color:#8a5a1e;padding:9px 18px;border-radius:999px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;}
+.section{padding:clamp(40px,5vw,64px) var(--px);}
+.sec-title{display:flex;align-items:baseline;gap:16px;margin-bottom:clamp(24px,3vw,36px);}
+.sec-title h2{font-family:'Barlow Condensed';font-size:clamp(28px,4vw,40px);text-transform:uppercase;letter-spacing:1px;color:#3a2c14;}
+.sec-title .num{color:var(--accent);font-family:'Barlow Condensed';font-size:20px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(16px,2.5vw,26px);}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(20px,3vw,30px);position:relative;overflow:hidden;min-width:0;box-shadow:0 2px 10px rgba(90,70,40,.06);}
+.card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,#e0a84f,#a8742a);}
+.card-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;gap:10px;}
+.card h3{font-family:'Barlow Condensed';font-size:clamp(22px,2.4vw,27px);text-transform:uppercase;letter-spacing:.5px;line-height:1.05;color:#3a2c14;}
+.card .tag{font-size:11px;color:var(--accent);letter-spacing:2px;text-transform:uppercase;}
+.card p{color:var(--muted);font-size:clamp(12px,1.1vw,13px);line-height:1.65;margin-bottom:18px;}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:18px;}
+.stat{background:#faf5ec;border:1px solid #eadfc8;border-radius:12px;padding:12px 14px;}
+.stat .v{font-family:'Barlow Condensed';font-size:clamp(20px,2vw,24px);color:var(--accent2);font-weight:700;}
+.stat .l{font-size:10px;color:var(--muted2);text-transform:uppercase;letter-spacing:1px;margin-top:2px;}
+.apps{margin-bottom:18px;}
+.apps .lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:9px;}
+.chips{display:flex;flex-wrap:wrap;gap:7px;}
+.chip{font-size:11.5px;background:#faf5ec;border:1px solid #eadfc8;border-radius:999px;padding:5px 12px;color:#6d6252;}
+table{width:100%;border-collapse:collapse;font-size:11.5px;}
+th{text-align:left;color:var(--muted2);text-transform:uppercase;font-size:9.5px;letter-spacing:1px;padding:5px 0;border-bottom:1px solid #eadfc8;}
+td{padding:5px 0;color:#5c5240;border-bottom:1px dashed #e8ddc8;}
+tr td:last-child{color:var(--accent2);font-weight:600;}
+.pour{font-size:11.5px;color:#8a5a1e;background:rgba(200,150,60,.08);border:1px solid #eadfc8;border-radius:10px;padding:10px 14px;margin-top:14px;}
+.comp{margin-top:16px;}
+.footer{background:#efe7d8;padding:clamp(24px,4vw,40px) var(--px);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;border-top:1px solid #e3d8c4;color:var(--muted2);font-size:12px;}
+.footer b{color:var(--accent2);letter-spacing:2px;}
+@media(max-width:640px){
+  .logo b{font-size:17px;}
+  .stat .l{font-size:9px;}
+  table{font-size:10.5px;}
+  .chip{font-size:10.5px;padding:4px 10px;}
+}
+
+/* ===== interactivity styles ===== */
+.card{transition:transform .25s ease, box-shadow .25s ease;}
+.card:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(90,70,40,.14);}
+.card.reveal{opacity:0;transform:translateY(24px);}
+.card.reveal.shown{opacity:1;transform:translateY(0);transition:opacity .5s ease, transform .5s ease;}
+.card.hidden{display:none;}
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:14px;}
+.search-box{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid #e3d8c4;border-radius:999px;padding:10px 18px;flex:1;min-width:230px;box-shadow:0 2px 8px rgba(90,70,40,.05);}
+.search-box input{border:none;outline:none;background:transparent;font-family:'Inter';font-size:13px;width:100%;color:#2c2619;}
+.search-box input::placeholder{color:#b3a68d;}
+.filters{display:flex;gap:8px;}
+.fbtn{border:1px solid #d9c49a;background:#fff;color:#8a5a1e;padding:9px 18px;border-radius:999px;font-family:'Inter';font-size:12px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .2s;}
+.fbtn:hover{background:#f7ecd6;}
+.fbtn.active{background:linear-gradient(135deg,#e0a84f,#a8742a);color:#fff;border-color:transparent;box-shadow:0 4px 12px rgba(160,110,40,.3);}
+.toggle-theme{border:1px solid #d9c49a;background:#fff;width:42px;height:42px;border-radius:50%;font-size:16px;cursor:pointer;transition:transform .2s;}
+.toggle-theme:hover{transform:rotate(20deg) scale(1.08);}
+.result-info{font-size:12px;color:#9a8d78;margin-bottom:20px;min-height:15px;}
+.comp-btn{margin-top:12px;border:1px solid #d9c49a;background:rgba(200,150,60,.08);color:#8a5a1e;padding:8px 16px;border-radius:999px;font-size:11.5px;font-family:'Inter';cursor:pointer;letter-spacing:.5px;transition:background .2s;}
+.comp-btn:hover{background:rgba(200,150,60,.18);}
+.no-result{grid-column:1/-1;text-align:center;padding:60px 20px;color:#9a8d78;font-size:14px;display:none;}
+.stat:hover{background:#f3ead7;}
+/* dark theme overrides */
+body.dark{--bg:#12100e;--card:#1c1815;--line:#322819;--muted:#b7ab9a;--muted2:#8f8371;--accent2:#e9b45c;background:#12100e;color:#ece5da;}
+body.dark .hero{background:radial-gradient(ellipse at 20% 0%, #3a2a17 0%, #171310 60%);border-color:#3a2a17;}
+body.dark .hero h1,body.dark .logo b,body.dark .sec-title h2,body.dark .card h3{color:#ece5da;}
+body.dark .card{box-shadow:none;}
+body.dark .stat,body.dark .chip,body.dark .search-box,body.dark .fbtn,body.dark .toggle-theme,body.dark .comp-btn{background:#242019;border-color:#3a2f1f;color:#cfc4b1;}
+body.dark .search-box input{color:#ece5da;}
+body.dark th{border-color:#3a2f1f;} body.dark td{border-color:#2c2419;color:#cfc4b1;}
+body.dark .pour{background:rgba(217,164,75,.07);border-color:#44351d;color:#e0c894;}
+body.dark .card:hover{box-shadow:0 14px 34px rgba(0,0,0,.5);}
+body.dark .footer{background:#0d0b09;border-color:#2a2015;}
+body.dark .fbtn.active{background:linear-gradient(135deg,#e0a84f,#a8742a);color:#1a1208;}
+#toTop{position:fixed;right:24px;bottom:24px;width:44px;height:44px;border-radius:50%;border:none;background:linear-gradient(135deg,#e0a84f,#a8742a);color:#fff;font-size:18px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;box-shadow:0 6px 16px rgba(160,110,40,.4);z-index:50;}
+#toTop.show{opacity:1;pointer-events:auto;}
+@media(max-width:640px){.filters{width:100%;}}
+
+/* ===== gambar produk ===== */
+.card-media{display:flex;align-items:center;justify-content:center;height:150px;margin-bottom:16px;border-radius:12px;background:#faf5ec;border:1px solid #eadfc8;overflow:hidden}
+.card-media img{display:block;height:100%;width:auto;max-width:100%;object-fit:contain;padding:8px;mix-blend-mode:multiply}
+body.dark .card-media{background:#fff;border-color:#3a2f1f}
+body.dark .card-media img{mix-blend-mode:normal}
+
+/* ===== komposisi kimia (buka-tutup) ===== */
+.comp{display:none}
+.comp.open{display:block}
+
+/* ===== kartu standar kualitas ===== */
+.card.card-quality{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;background:linear-gradient(135deg,#f7ecd6,#ffffff)}
+.card-quality .tag{margin-bottom:10px}
+.card.card-quality h3{font-size:32px;line-height:1.1}
+.card-quality h3 span{color:var(--accent)}
+.card-quality p{margin-top:14px}
+.card-quality .badges{margin-top:22px}
+body.dark .card.card-quality{background:linear-gradient(135deg,#2a2013,#1c1815)}
+
+/* ===== fokus keyboard dan gerak ===== */
+.fbtn:focus-visible,.toggle-theme:focus-visible,.comp-btn:focus-visible,#toTop:focus-visible,.search-box:focus-within{outline:3px solid var(--accent);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){
+  .card,.card.reveal.shown{transition:none}
+  .card.reveal{opacity:1;transform:none}
+  .card:hover{transform:none}
+}
